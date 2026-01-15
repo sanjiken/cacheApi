@@ -1,4 +1,4 @@
-package com.example.artere.cacheApi.web.dto;
+package com.artere.cacheApi.web.dto;
 
 public class GetResponse {
     private String value;

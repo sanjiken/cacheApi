@@ -1,13 +1,15 @@
 package com.artere.cacheApi.web;
 
-import com.example.artere.cacheApi.web.dto.PutRequest;
+import com.artere.cacheApi.web.dto.PutRequest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.resttestclient.TestRestTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CacheControllerIntegrationTest {
@@ -28,6 +30,7 @@ class CacheControllerIntegrationTest {
 
         ResponseEntity<String> getResp = rest.getForEntity("/cache/" + key, String.class);
         assertEquals(HttpStatus.OK, getResp.getStatusCode());
+        Assertions.assertNotNull(getResp.getBody());
         assertTrue(getResp.getBody().contains("it-value"));
 
         Thread.sleep(500);

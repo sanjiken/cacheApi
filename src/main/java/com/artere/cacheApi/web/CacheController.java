@@ -1,10 +1,12 @@
-package com.example.artere.cacheApi.web;
+package com.artere.cacheApi.web;
 
-import com.example.artere.cacheApi.cache.SimpleCache;
-import com.example.artere.cacheApi.web.dto.GetResponse;
-import com.example.artere.cacheApi.web.dto.PutRequest;
+
+import com.artere.cacheApi.cache.SimpleCache;
+import com.artere.cacheApi.web.dto.GetResponse;
+import com.artere.cacheApi.web.dto.PutRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/cache")

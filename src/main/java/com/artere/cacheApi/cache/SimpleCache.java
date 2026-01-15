@@ -1,4 +1,4 @@
-package com.example.artere.cacheApi.cache;
+package com.artere.cacheApi.cache;
 
 import java.util.concurrent.*;
 
